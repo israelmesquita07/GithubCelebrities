@@ -19,7 +19,7 @@ enum GithubCelebrities {
     enum Users {
         
         struct Request {
-            var page: Int = 1
+            var page = 0
         }
         
         struct Response {

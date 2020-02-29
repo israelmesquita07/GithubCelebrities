@@ -28,7 +28,7 @@ class GithubCelebritiesPresenter: GithubCelebritiesPresentationLogic {
     func presentUsers(response: GithubCelebrities.Users.Response) {
         var viewModel = GithubCelebrities.Users.ViewModel()
         viewModel.usersCelebrities = response.usersCelebrities
-        viewController?.displaySomething(viewModel: viewModel)
+        viewController?.displayUsersCelebrities(viewModel: viewModel)
     }
     
     func presentError() {

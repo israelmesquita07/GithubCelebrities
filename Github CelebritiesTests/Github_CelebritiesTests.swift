@@ -11,17 +11,45 @@ import XCTest
 
 class Github_CelebritiesTests: XCTestCase {
 
+    var sut: GithubCelebritiesViewController?
+    var usersCelebrities: UsersCelebrities?
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        let sboard = UIStoryboard(name: "Main", bundle: nil)
+        sut = sboard.instantiateViewController(withIdentifier: "GithubCelebritiesViewController")
+                as? GithubCelebritiesViewController
+        usersCelebrities = getAPIUserData()
+    }
+    
+    func testItensNotNil() {
+        XCTAssertNotNil(usersCelebrities?.items)
+    }
+    
+    func testIdGreaterThanZero() {
+        XCTAssertGreaterThan((usersCelebrities!.items![0].id)!, 0)
     }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func testGetUsers() {
+        
+        //Arranje
+        guard sut != nil else { return }
+        sut!.loadView()
+        let request = GithubCelebrities.Users.Request()
+        
+        //ACT
+        sut!.interactor?.getUsers(request: request)
+        
+        //Assert
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            XCTAssertEqual(self.sut!.users.count, 1)
+        }
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testToggleViewLoading() {
+        guard sut != nil else { return }
+        sut!.loadView()
+        sut!.toggleLoading(false)
+        XCTAssertFalse(sut!.activityIndicator.isHidden)
     }
 
     func testPerformanceExample() {
@@ -29,6 +57,24 @@ class Github_CelebritiesTests: XCTestCase {
         self.measure {
             // Put the code you want to measure the time of here.
         }
+    }
+    
+    private func getAPIUserData() -> UsersCelebrities? {
+        
+        if let path = Bundle.main.path(forResource: "UsersCelebrities", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                if let result = try? decoder.decode(UsersCelebrities.self, from: data) {
+                    return result
+                }
+            } catch let error {
+                print("Test Error: \(error)")
+                return nil
+            }
+        }
+        return nil
     }
 
 }

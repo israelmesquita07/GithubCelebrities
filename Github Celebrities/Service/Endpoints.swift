@@ -9,5 +9,6 @@
 import Foundation
 
 class Endpoints {
-    static let baseUrl:String = "https://api.github.com/search/repositories?q=language:swift&sort=stars&page="
+    static let baseUrl = "https://api.github.com/search/repositories?q=language:swift&sort=stars"
+    static let urlPage = "\(Endpoints.baseUrl)&page="
 }

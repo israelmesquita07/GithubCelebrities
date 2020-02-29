@@ -22,7 +22,25 @@ class GithubCelebritiesInteractor: GithubCelebritiesBusinessLogic {
     var presenter: GithubCelebritiesPresentationLogic?
     
     // MARK: Get Users
-    
+//    func getUsers(request: GithubCelebrities.Users.Request) {
+//        let worker = GithubCelebritiesWorker()
+//        if let result = worker.getAPIUserData() {
+//            switch result {
+//            case .success(let usersCelebrities):
+//                var response = GithubCelebrities.Users.Response()
+//                response.usersCelebrities = usersCelebrities
+//                self.presenter?.presentUsers(response: response)
+//                self.presenter?.toggleLoading(false)
+//                break
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//                self.presenter?.presentError()
+//                self.presenter?.toggleLoading(false)
+//                break
+//            }
+//        }
+//
+//    }
     func getUsers(request: GithubCelebrities.Users.Request) {
         let worker = GithubCelebritiesWorker()
         worker.getUsers(request) { [weak self] (result) in

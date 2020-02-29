@@ -11,7 +11,7 @@ import Foundation
 class API {
     
     static func getUsers(_ request: GithubCelebrities.Users.Request, onComplete:@escaping(Result<UsersCelebrities,Error>) -> Void) {
-        if let url = URL(string: "\(Endpoints.baseUrl)\(request.page)") {
+        if let url = URL(string: "\(Endpoints.urlPage)\(request.page)") {
             let dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
                 if error == nil {
                     guard let data = data else { return }
@@ -35,5 +35,4 @@ class API {
         }
         return nil
     }
-    
 }

@@ -12,7 +12,7 @@ struct UsersCelebrities: Decodable {
     let items: [User]?
     let totalCount:Int?
     
-    enum CodingKeys:String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case items
         case totalCount = "total_count"
     }
@@ -21,8 +21,15 @@ struct UsersCelebrities: Decodable {
 struct User: Decodable {
     let id: Int?
     let name: String?
-    let stargazers_count: Int?
+    let stargazersCount: Int?
     let owner: Owner?
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case stargazersCount// = "stargazers_count"
+        case owner
+    }
 }
 
 struct Owner: Decodable {
