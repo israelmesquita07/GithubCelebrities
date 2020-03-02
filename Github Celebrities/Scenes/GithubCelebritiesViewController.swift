@@ -146,7 +146,6 @@ extension GithubCelebritiesViewController: GithubCelebritiesDisplayLogic {
     }
 }
 
-
 //MARK: - UITableViewDataSource
 extension GithubCelebritiesViewController: UITableViewDataSource {
     
@@ -174,7 +173,6 @@ extension GithubCelebritiesViewController: UITableViewDataSource {
     }
 }
 
-
 //MARK: - UITableViewDelegate
 extension GithubCelebritiesViewController: UITableViewDelegate {
     
@@ -184,7 +182,7 @@ extension GithubCelebritiesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == users.count - 1 {
-            page = page == totalPages ? 0 : page + 1
+            page = page > totalPages ? 0 : page + 1
             getUsers(page)
         }
     }
