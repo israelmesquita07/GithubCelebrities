@@ -225,7 +225,7 @@ DEPENDENCIES
   cocoapods (= 1.1.1)
   cocoapods-keys (= 1.7.0)
   fastlane
-  slather (= 2.3.0)
+  slather
 
 BUNDLED WITH
    2.1.4
