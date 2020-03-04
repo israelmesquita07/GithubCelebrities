@@ -20,22 +20,4 @@ class GithubCelebritiesWorker {
             onComplete(result)
         }
     }
-    
-//    func getAPIUserData() -> Result<UsersCelebrities,Error>? {
-//        
-//        if let path = Bundle.main.path(forResource: "UsersCelebrities", ofType: "json") {
-//            do {
-//                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
-//                let decoder = JSONDecoder()
-//                decoder.keyDecodingStrategy = .convertFromSnakeCase
-//                if let result = try? decoder.decode(UsersCelebrities.self, from: data) {
-//                    return .success(result)
-//                }
-//            } catch let error {
-//                print("Error: \(error)")
-//                return .failure(error)
-//            }
-//        }
-//        return nil
-//    }
 }
