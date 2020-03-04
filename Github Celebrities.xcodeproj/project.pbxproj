@@ -10,6 +10,7 @@
 		2D74B007CCE2977D97466152 /* Pods_Github_CelebritiesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A2BA887D997AD7FAC14CB5 /* Pods_Github_CelebritiesTests.framework */; };
 		584C26EF2409F369001ED910 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584C26EE2409F369001ED910 /* Constants.swift */; };
 		584C26F02409F369001ED910 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584C26EE2409F369001ED910 /* Constants.swift */; };
+		588029B8241050A9003BEB33 /* huwdi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588029B7241050A9003BEB33 /* huwdi.swift */; };
 		58E0C84423FC6662000114D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E0C84323FC6662000114D9 /* AppDelegate.swift */; };
 		58E0C84623FC6662000114D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E0C84523FC6662000114D9 /* SceneDelegate.swift */; };
 		58E0C84B23FC6662000114D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58E0C84923FC6662000114D9 /* Main.storyboard */; };
@@ -50,6 +51,7 @@
 /* Begin PBXFileReference section */
 		238655F6E3206D5678A38183 /* Pods-Github Celebrities.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Github Celebrities.release.xcconfig"; path = "Pods/Target Support Files/Pods-Github Celebrities/Pods-Github Celebrities.release.xcconfig"; sourceTree = "<group>"; };
 		584C26EE2409F369001ED910 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		588029B7241050A9003BEB33 /* huwdi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = huwdi.swift; sourceTree = "<group>"; };
 		58E0C84023FC6662000114D9 /* Github Celebrities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Github Celebrities.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58E0C84323FC6662000114D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58E0C84523FC6662000114D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			children = (
 				58E0C85A23FC6666000114D9 /* Github_CelebritiesTests.swift */,
 				58E0C85C23FC6666000114D9 /* Info.plist */,
+				588029B7241050A9003BEB33 /* huwdi.swift */,
 			);
 			path = "Github CelebritiesTests";
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58E0C87C23FC6828000114D9 /* UsersCelebrities.swift in Sources */,
+				588029B8241050A9003BEB33 /* huwdi.swift in Sources */,
 				58E0C87023FC6742000114D9 /* GithubCelebritiesWorker.swift in Sources */,
 				58E0C86E23FC6742000114D9 /* GithubCelebritiesPresenter.swift in Sources */,
 				58E0C88023FC68A9000114D9 /* Endpoints.swift in Sources */,

@@ -22,10 +22,10 @@ platform :ios do
   end
     # You can define as many lanes as you want
   lane :example do
-    say "First lane example"
+    say "Alex biba"
   end
   lane :test do
-     scan(scheme: "Github Celebrities")
+     scan(scheme: "Github Celebrities", code_coverage: true)
      slather(
        output_directory: "coverage",
        workspace: "Github Celebrities.xcworkspace",

@@ -11,13 +11,13 @@ import XCTest
 
 class Github_CelebritiesTests: XCTestCase {
 
-    var sut: GithubCelebritiesViewController?
-    var usersCelebrities: UsersCelebrities?
+    var sut: GithubCelebritiesViewController!
+    var usersCelebrities: UsersCelebrities!
     
     override func setUp() {
         let sboard = UIStoryboard(name: "Main", bundle: nil)
         sut = sboard.instantiateViewController(withIdentifier: "GithubCelebritiesViewController")
-                as? GithubCelebritiesViewController
+            as? GithubCelebritiesViewController
         usersCelebrities = getAPIUserData()
     }
     
