@@ -11,45 +11,59 @@ import XCTest
 
 class Github_CelebritiesTests: XCTestCase {
 
-    var sut: GithubCelebritiesViewController!
+    var sut: Github_Celebrities.GithubCelebritiesViewController!
     var usersCelebrities: UsersCelebrities!
     
     override func setUp() {
-        let sboard = UIStoryboard(name: "Main", bundle: nil)
-        sut = sboard.instantiateViewController(withIdentifier: "GithubCelebritiesViewController")
-            as? GithubCelebritiesViewController
         usersCelebrities = getAPIUserData()
     }
     
     func testItensNotNil() {
+        //Assert
         XCTAssertNotNil(usersCelebrities?.items)
     }
     
     func testIdGreaterThanZero() {
+        //Assert
         XCTAssertGreaterThan((usersCelebrities!.items![0].id)!, 0)
     }
 
     func testGetUsers() {
         
         //Arranje
-        guard sut != nil else { return }
-        sut!.loadView()
-        let request = GithubCelebrities.Users.Request()
+        let request = Github_Celebrities.GithubCelebrities.Users.Request()
         
         //ACT
-        sut!.interactor?.getUsers(request: request)
-        
-        //Assert
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            XCTAssertEqual(self.sut!.users.count, 1)
+        let expectation = XCTestExpectation(description: "retornoAPI")
+        Github_Celebrities.API.getUsers(request) { (result) in
+            switch result {
+            case .success(let usersCelebrities):
+                //Assert
+                let arrUsers = [usersCelebrities]
+                XCTAssertEqual(arrUsers.count, 1)
+                break
+            case .failure(let error):
+                XCTFail(error.localizedDescription)
+                break
+            }
+            expectation.fulfill()
         }
+        wait(for: [expectation], timeout: 10)
     }
     
     func testToggleViewLoading() {
-        guard sut != nil else { return }
+        
+        //Arranje
+        let sboard = UIStoryboard(name: "Main", bundle: nil)
+        sut = (sboard.instantiateViewController(withIdentifier: "GithubCelebritiesViewController")
+            as! Github_Celebrities.GithubCelebritiesViewController)
         sut!.loadView()
+        
+        //ACT
         sut!.toggleLoading(false)
-        XCTAssertFalse(sut!.activityIndicator.isHidden)
+        
+        //Assert
+        XCTAssertTrue(sut!.activityIndicator.isHidden)
     }
 
     func testPerformanceExample() {
