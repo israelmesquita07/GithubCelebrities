@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <testsuites name='Github CelebritiesTests.xctest' tests='5' failures='0'>
   <testsuite name='Github_CelebritiesTests.Github_CelebritiesTests' tests='5' failures='0'>
-    <testcase classname='Github_CelebritiesTests.Github_CelebritiesTests' name='testGetUsers' time='1.264'/>
-    <testcase classname='Github_CelebritiesTests.Github_CelebritiesTests' name='testIdGreaterThanZero' time='0.023'/>
-    <testcase classname='Github_CelebritiesTests.Github_CelebritiesTests' name='testItensNotNil' time='0.026'/>
-    <testcase classname='Github_CelebritiesTests.Github_CelebritiesTests' name='testPerformanceExample' time='0.337'/>
-    <testcase classname='Github_CelebritiesTests.Github_CelebritiesTests' name='testToggleViewLoading' time='0.022'/>
+    <testcase classname='Github_CelebritiesTests.Github_CelebritiesTests' name='testGetUsers' time='1.288'/>
+    <testcase classname='Github_CelebritiesTests.Github_CelebritiesTests' name='testIdGreaterThanZero' time='0.018'/>
+    <testcase classname='Github_CelebritiesTests.Github_CelebritiesTests' name='testItensNotNil' time='0.021'/>
+    <testcase classname='Github_CelebritiesTests.Github_CelebritiesTests' name='testPerformanceExample' time='0.361'/>
+    <testcase classname='Github_CelebritiesTests.Github_CelebritiesTests' name='testToggleViewLoading' time='0.026'/>
   </testsuite>
 </testsuites>
