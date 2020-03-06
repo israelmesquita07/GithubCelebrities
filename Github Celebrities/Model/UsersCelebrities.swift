@@ -27,7 +27,7 @@ struct User: Decodable {
     enum CodingKeys: String, CodingKey {
         case id
         case name
-        case stargazersCount// = "stargazers_count"
+        case stargazersCount = "stargazers_count"
         case owner
     }
 }
