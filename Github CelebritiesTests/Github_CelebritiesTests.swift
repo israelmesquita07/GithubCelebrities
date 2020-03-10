@@ -74,7 +74,6 @@ class Github_CelebritiesTests: XCTestCase {
     }
     
     private func getAPIUserData() -> UsersCelebrities? {
-        
         if let path = Bundle.main.path(forResource: "UsersCelebrities", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
@@ -90,5 +89,4 @@ class Github_CelebritiesTests: XCTestCase {
         }
         return nil
     }
-
 }
