@@ -13,11 +13,10 @@
 
 import Foundation
 
-class GithubCelebritiesWorker {
-    
-    func getUsers(_ request: GithubCelebrities.Users.Request, onComplete:@escaping(Result<UsersCelebrities,Error>) -> Void) {
-        API.getUsers(request) { (result) in
-            onComplete(result)
+final class GithubCelebritiesWorker {
+    func getUsers(_ request: GithubCelebrities.Users.Request, completion: @escaping (Result<UsersCelebrities, NetworkingError>) -> Void) {
+        NetworkingAPI().getUsers(request) { result in
+            completion(result)
         }
     }
 }

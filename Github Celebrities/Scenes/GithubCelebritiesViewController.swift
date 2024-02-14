@@ -14,7 +14,7 @@
 import UIKit
 import Kingfisher
 
-protocol GithubCelebritiesDisplayLogic: class {
+protocol GithubCelebritiesDisplayLogic: AnyObject {
     func displayUsersCelebrities(viewModel: GithubCelebrities.Users.ViewModel)
     func displayError()
     func toggleLoading(_ bool: Bool)
