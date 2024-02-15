@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "4BD1E920-6963-429B-9E72-DCD783C149E6"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4DBA6A9D-86DE-4BCF-92EB-716740A2FD88"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Github Celebrities/Service/API.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "init(urlString:session:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4DBA6A9D-86DE-4BCF-92EB-716740A2FD88 - 4a3c2f77188c6ec1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Github_Celebrities.NetworkingAPI.init(urlString: Swift.String, session: __C.NSURLSession) -&gt; Github_Celebrities.NetworkingAPI"
+                  moduleName = "Github Celebrities"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/israel.mesquita/Documents/Personal%20Dev/GithubCelebrities/Github%20Celebrities/Service/API.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  uuid = "4DBA6A9D-86DE-4BCF-92EB-716740A2FD88 - 7309416a0aca6d59"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Github_CelebritiesTests.NetworkingAPI.init(urlString: Swift.String, session: __C.NSURLSession) -&gt; Github_CelebritiesTests.NetworkingAPI"
+                  moduleName = "Github CelebritiesTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/israel.mesquita/Documents/Personal%20Dev/GithubCelebrities/Github%20Celebrities/Service/API.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "92">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

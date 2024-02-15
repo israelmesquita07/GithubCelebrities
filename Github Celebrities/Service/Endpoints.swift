@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Endpoints {
-    static let baseUrl = "https://api.github.com/search/repositories?q=language:swift&sort=stars"
+final class Endpoints {
+    private static let baseUrl = "https://api.github.com/search/repositories?q=language:swift&sort=stars"
     static let urlPage = "\(Endpoints.baseUrl)&page="
 }
