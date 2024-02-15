@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2D74B007CCE2977D97466152 /* Pods_Github_CelebritiesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A2BA887D997AD7FAC14CB5 /* Pods_Github_CelebritiesTests.framework */; };
+		5568F2992B7D75BB0056CFE8 /* NetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568F2982B7D75BB0056CFE8 /* NetworkingTests.swift */; };
 		584C26EF2409F369001ED910 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584C26EE2409F369001ED910 /* Constants.swift */; };
 		584C26F02409F369001ED910 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584C26EE2409F369001ED910 /* Constants.swift */; };
 		58E0C84423FC6662000114D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E0C84323FC6662000114D9 /* AppDelegate.swift */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		238655F6E3206D5678A38183 /* Pods-Github Celebrities.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Github Celebrities.release.xcconfig"; path = "Pods/Target Support Files/Pods-Github Celebrities/Pods-Github Celebrities.release.xcconfig"; sourceTree = "<group>"; };
+		5568F2982B7D75BB0056CFE8 /* NetworkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingTests.swift; sourceTree = "<group>"; };
 		584C26EE2409F369001ED910 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		58E0C84023FC6662000114D9 /* Github Celebrities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Github Celebrities.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58E0C84323FC6662000114D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				58E0C85A23FC6666000114D9 /* Github_CelebritiesTests.swift */,
+				5568F2982B7D75BB0056CFE8 /* NetworkingTests.swift */,
 				58E0C85C23FC6666000114D9 /* Info.plist */,
 			);
 			path = "Github CelebritiesTests";
@@ -404,6 +407,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5568F2992B7D75BB0056CFE8 /* NetworkingTests.swift in Sources */,
 				58E0C87C23FC6828000114D9 /* UsersCelebrities.swift in Sources */,
 				58E0C87023FC6742000114D9 /* GithubCelebritiesWorker.swift in Sources */,
 				58E0C86E23FC6742000114D9 /* GithubCelebritiesPresenter.swift in Sources */,

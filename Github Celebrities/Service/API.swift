@@ -8,35 +8,6 @@
 
 import Foundation
 
-//class API {
-//    
-//    static func getUsers(_ request: GithubCelebrities.Users.Request, onComplete:@escaping(Result<UsersCelebrities,Error>) -> Void) {
-//        if let url = URL(string: "\(Endpoints.urlPage)\(request.page)") {
-//            let dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
-//                if error == nil {
-//                    guard let data = data else { return }
-//                    if let dictJson = self.parseDataToDictionary(data) {
-//                        if let model = try? JSONDecoder().decode(UsersCelebrities.self, from: JSONSerialization.data(withJSONObject: dictJson, options: .prettyPrinted)) {
-//                            onComplete(.success(model))
-//                        }
-//                    }
-//                } else {
-//                    onComplete(.failure(error!))
-//                }
-//            }
-//            dataTask.resume()
-//        }
-//    }
-//    
-//    private static func parseDataToDictionary(_ data:Data) -> [String: Any]? {
-//        
-//        if let dictJson = try? JSONSerialization.jsonObject(with: data, options: []) as? [String:Any] {
-//            return dictJson
-//        }
-//        return nil
-//    }
-//}
-
 enum NetworkingError: Error {
     case invalidURL
     case responseError
@@ -45,23 +16,27 @@ enum NetworkingError: Error {
 }
 
 protocol Networking {
-    func getUsers(_ request: GithubCelebrities.Users.Request, completion: @escaping (Result<UsersCelebrities,NetworkingError>) -> Void)
+    func fetchData<T: Decodable>(_ request: GithubCelebrities.Users.Request, completion: @escaping (Result<T, NetworkingError>) -> Void)
 }
 
 final class NetworkingAPI: Networking {
     let session: URLSession
+    let urlString: String
 
-    init(session: URLSession = URLSession.shared) {
+    init(urlString: String,
+         session: URLSession = URLSession.shared) {
+        self.urlString = urlString
         self.session = session
     }
 
-    func getUsers(_ request: GithubCelebrities.Users.Request, completion: @escaping (Result<UsersCelebrities, NetworkingError>) -> Void) {
-        guard let url = URL(string: "\(Endpoints.urlPage)\(request.page)") else {
+    func fetchData<T: Decodable>(_ request: GithubCelebrities.Users.Request, completion: @escaping (Result<T, NetworkingError>) -> Void) {
+        guard let cfUrl = CFURLCreateWithString(nil, "\(urlString)\(request.page)" as CFString, nil),
+              let url = cfUrl as URL? else {
             completion(.failure(.invalidURL))
             return
         }
         let task = session.dataTask(with: url) { data, response, error in
-            guard error != nil else {
+            guard error == nil else {
                 completion(.failure(.responseError))
                 return
             }
@@ -71,7 +46,7 @@ final class NetworkingAPI: Networking {
                 return
             }
             
-            guard let users = try? JSONDecoder().decode(UsersCelebrities.self, from: data) else {
+            guard let users = try? JSONDecoder().decode(T.self, from: data) else {
                 completion(.failure(.parseData))
                 return
             }

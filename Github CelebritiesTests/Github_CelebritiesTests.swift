@@ -29,13 +29,12 @@ class Github_CelebritiesTests: XCTestCase {
     }
 
     func testGetUsers() {
-        
         //Arranje
-        let request = Github_Celebrities.GithubCelebrities.Users.Request()
+        let request = GithubCelebrities.Users.Request()
         
         //ACT
         let expectation = XCTestExpectation(description: "retornoAPI")
-        Github_Celebrities.API.getUsers(request) { (result) in
+        NetworkingAPI(urlString: Endpoints.urlPage).fetchData(request) { (result: Result<UsersCelebrities, NetworkingError>) in
             switch result {
             case .success(let usersCelebrities):
                 //Assert
