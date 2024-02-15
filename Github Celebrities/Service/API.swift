@@ -46,7 +46,9 @@ final class NetworkingAPI: Networking {
                 return
             }
             
-            guard let users = try? JSONDecoder().decode(T.self, from: data) else {
+            let decode = JSONDecoder()
+            decode.keyDecodingStrategy = .convertFromSnakeCase
+            guard let users = try? decode.decode(T.self, from: data) else {
                 completion(.failure(.parseData))
                 return
             }
